@@ -21,7 +21,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
     #gets docker compose
       - name: setUp Docker Compose
-        uses: docker/setup-compose-action@v2
+        uses: docker/setup-qemu-action@v3
       
       # - name: Ensure Docker Compose is Available
       #   run: docker-compose --version
