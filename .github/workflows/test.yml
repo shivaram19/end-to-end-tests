@@ -15,7 +15,7 @@ jobs:
     steps:
     # checks out all the code to the ubuntu-latest
       - name: Checkout Code
-        uses: actions/chekout@v2
+        uses: actions/checkout@v2
     # gets docker
       - name: SetUp Docker BuildX
         uses: dcoker/setup-buildx-actions@v2
