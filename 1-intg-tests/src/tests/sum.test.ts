@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest"
-import { app } from "..";
+import { app } from "../index";
 import request from "supertest";
 
 describe("POST /sum", () => {
@@ -9,6 +9,6 @@ describe("POST /sum", () => {
             b: 2
         })
         expect(status).toBe(200);
-        expect(body).toEqual({ answer: 5, id: expect.any(Number) });
+        expect(body).toEqual({ answer: 3, id: expect.any(Number) });
     });
 })

@@ -1,11 +1,14 @@
-import { primsa } from "./db";
-import express, { Request } from "express"
+import express, { Request, Response } from "express";
+import { prisma } from "./db";
 
-export const app = express()
+export const app = express();
+app.use(express.json());
+interface SumRequest {
+  a: number;
+  b: number;
+}
 
-app.use(express.json())
-
-app.post("/sum", async (req : any, res: any) => {
+app.post("/sum", async (req : any, res : any) => {
     const a = req.body.a;
     const b = req.body.b;
     
@@ -16,7 +19,7 @@ app.post("/sum", async (req : any, res: any) => {
     }
     const result = a + b;
 
-    const request = await primsa.request.create({
+    const request = await prisma.request.create({
         data: {
             a: a,
             b: b,
@@ -27,8 +30,3 @@ app.post("/sum", async (req : any, res: any) => {
     
     res.json({ answer: result, id: request.id });
 })
-
-
-// app.listen(8070, () => {
-//   console.log("running")
-// })

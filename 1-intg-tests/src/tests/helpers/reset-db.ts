@@ -1,8 +1,8 @@
-import { primsa } from "../../db"
+import { prisma } from "../../db"
 
 
 export async function clearDB(){
-  await primsa.$transaction([
-    primsa.request.deleteMany()
+  await prisma.$transaction([
+    prisma.request.deleteMany()
   ])
 }
