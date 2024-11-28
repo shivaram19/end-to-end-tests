@@ -18,10 +18,10 @@ jobs:
         uses: actions/checkout@v2
     # gets docker
       - name: SetUp Docker BuildX
-        uses: docker/setup-buildx-actions@v3
+        uses: docker/setup-buildx-action@v3
     #gets docker compose
       - name: setUp Docker Compose
-        uses: docker/setup-qemu-actions@v3
+        uses: docker/setup-qemu-action@v3
       
       - name: Ensure Docker Compose is Available
         run: docker-compose --version
